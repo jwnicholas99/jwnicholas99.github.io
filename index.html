@@ -1,0 +1,11 @@
+---
+title: "Home"
+layout: default
+---
+
+<div class="projects">
+    {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+    {% for project in sorted_projects %}
+        {% include project_panel.html project=project %}
+    {% endfor %}
+</div>

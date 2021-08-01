@@ -1,0 +1,14 @@
+---
+layout: post
+title:  Weenix
+image_path: /images/projects/weenix/weenix_demo.png
+banner_path:
+tagline: A full-fledged mini Unix operating system
+card_color: "#CB356B"
+skills: c
+filters: academic software
+---
+
+# Overview
+
+In Spring 2019, I developed the majority of a operating system kernel known as "Weenix" as part of the <a href="https://cs.brown.edu/courses/csci1670/">CSCI1670: Operating Systems</a> course (and its optional half-credit lab <a href="http://cs.brown.edu/courses/cs167/content/weenix-doc.pdf">CSCI1690: Operating Systems Laboratory</a>) at Brown University.

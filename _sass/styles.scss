@@ -1,0 +1,11 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: $default-font-family;
+    font-weight: $default-font-weight;
+    color: $default-font-color;
+    font-size: $default-font-size;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-backface-visibility: hidden;
+}
