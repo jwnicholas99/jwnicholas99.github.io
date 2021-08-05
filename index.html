@@ -1,11 +1,35 @@
 ---
 title: "Home"
 layout: default
+skills:
+    - Jekyll
+    - Ruby
+    - HTML/CSS
+    - JavaScript
 ---
-
-<div class="projects">
-    {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
-    {% for project in sorted_projects %}
-        {% include project_panel.html project=project %}
-    {% endfor %}
-</div>
+<header class="landing-container">
+    <div class="wrapper">
+        <div class="left-col">
+            {% include landing.html %}
+        </div>
+        <div class="right-col">
+            {% include header_details.html %}
+        </div>
+    </div>
+</header>
+<section class="section-container">
+    <div class="wrapper">
+        <div class="projects">
+            {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+            {% for project in sorted_projects %}
+                {% include project_panel.html project=project %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section>
+    <br><br>
+    I truly believe that a programmer is a craftsman. Programming is as much a technical skill as a creative art - not only can it solve 
+    problems, you can create anything you imagine. By exploring different areas from web development to robotics, I hope to learn the necessary 
+    tools to craft anything.
+</section>

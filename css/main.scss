@@ -3,15 +3,20 @@
 @charset "utf-8";
 
 // Variables
-$default-font-family: "Rubik";
-$default-font-color:  #000000;
+$default-font-family: "Inter";
+$default-font-color:  #365069;
 $default-font-size:   17px;
 $default-font-weight: 200;
+
+$header-font-family: "Open Sans";
+$header-font-weight: 700;
+
+$wrapper-max-width: 1050px;
 
 $palette-orange: #fd6a00;
 $palette-yellow: #f8d239;
 $palette-green: #38bb00;
-$palette-blue: #5ce1e6;
+$palette-blue: #00c2cb;
 $palette-indigo: #5e17eb;
 $palette-purple: #8c52ff;
 
