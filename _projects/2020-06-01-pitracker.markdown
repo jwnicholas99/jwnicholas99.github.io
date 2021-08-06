@@ -3,10 +3,14 @@ layout: post
 title:  PiTracker
 image_path: /images/projects/pitracker/rpi_demo.gif
 banner_path:
-tagline: A deep tracking rover
+tagline: Raspberry Pi rover mounted with a pan-tilt camera that is capable of tracking objects using object detection and Proportional Integral Derivative processes
 card_color: "#CB356B"
-skills: python
 filters: software
+skills:
+    - Python
+    - TensorFlow
+    - Raspberry Pi
+    - OpenCV
 ---
 
 # Overview
