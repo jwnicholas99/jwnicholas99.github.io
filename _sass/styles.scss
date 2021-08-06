@@ -9,7 +9,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-backface-visibility: hidden;
-    background: white;
 }
 
 a {
@@ -30,7 +29,6 @@ a {
   padding: 3px 12px;
   line-height: 30px;
   font-size: 15px;
-  font-weight: 400;
   color: white
 }
 
@@ -59,14 +57,12 @@ a {
 /* end reusables */
 
 /* landing */
-.landing-container {
-  display: flex;
+.landing-container,
+.header-container {
   justify-content: center;
   padding-top: 50px;
   padding-bottom: 30px;
   background: #F5F5F5;
-  font-size: 17px;
-  font-weight: 400;
 
   .wrapper {
     display: flex;
@@ -95,6 +91,20 @@ a {
   }
 }
 
+.landing-header {
+  padding-bottom: 40px;
+
+  .wrapper {
+    .left {
+      flex: 2 0 0;
+    }
+
+    .right {
+      flex: 1 0 0;
+    }
+  }
+}
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -103,13 +113,14 @@ a {
   img {
     padding-right: 16px;
   }
+
+  .logo-text {
+    font-family: $header-font-family;
+    font-weight: $header-font-weight;
+    font-size: 26px;
+  }
 }
 
-.logo-text {
-  font-family: $header-font-family;
-  font-weight: $header-font-weight;
-  font-size: 26px;
-}
 
 .landing-opening {
   padding-bottom: 6px;
