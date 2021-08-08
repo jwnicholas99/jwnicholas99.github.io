@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  PiTracker
-image_path: /images/projects/pitracker/rpi_demo.gif
+title:  TronRL
+image_path: /images/projects/weenix/weenix_demo.png
 banner_path:
-panel_desc: Deep-tracking Raspberry Pi Rover
+panel_desc: AI for Playing Tron
 tagline: Raspberry Pi rover mounted with a pan-tilt camera that is capable of tracking objects using object detection and Proportional Integral Derivative processes
 card_color: "#CB356B"
 filters: software

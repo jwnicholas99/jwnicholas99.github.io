@@ -6,6 +6,7 @@ body {
     font-weight: $default-font-weight;
     color: $default-font-color;
     font-size: $default-font-size;
+    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-backface-visibility: hidden;
@@ -106,9 +107,12 @@ a {
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
   padding-bottom: 20px;
+
+  a {
+    display: flex;
+    align-items: center;
+  }
 
   img {
     padding-right: 16px;
@@ -157,3 +161,62 @@ a {
     }
 }
 /* end landing */
+
+/* start projects */
+.projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .project-panel {
+    transition: all .5s ease-in;
+    width: 31%;
+    flex: 0 0 auto;
+    margin-bottom: 21px;
+    overflow: hidden;
+    padding: 0px 10px;
+
+    .image-and-overlay {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      border-radius: 8px;
+      margin-bottom: 9px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .panel-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: 300ms ease;
+        background-image: linear-gradient(rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.004) 63.94%, rgba(0, 0, 0, 0.016) 65.89%, rgba(0, 0, 0, 0.03) 67.83%, rgba(0, 0, 0, 0.06) 69.78%, rgba(0, 0, 0, 0.094) 71.72%, rgba(0, 0, 0, 0.133) 73.67%, rgba(0, 0, 0, 0.176) 75.61%, rgba(0, 0, 0, 0.224) 77.56%, rgba(0, 0, 0, 0.267) 79.5%, rgba(0, 0, 0, 0.306) 81.44%, rgba(0, 0, 0, 0.34) 83.39%, rgba(0, 0, 0, 0.37) 85.33%, rgba(0, 0, 0, 0.384) 87.28%, rgba(0, 0, 0, 0.396) 89.22%, rgba(0, 0, 0, 0.4) 91.17%);
+        display: flex;
+        align-items: flex-end;
+
+        .overlay-text {
+          width: 100%;
+          padding: 20px;
+          color: white;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .image-and-overlay:hover .panel-overlay {
+      opacity: 1;
+    }
+  }
+
+}
+
+/* end projects */
