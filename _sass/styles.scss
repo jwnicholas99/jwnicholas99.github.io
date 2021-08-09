@@ -41,7 +41,7 @@ a {
 .skill-bubble:nth-of-type(6n+6) { background: $palette-purple }
 
 .section-container {
-  padding-top: 40px;
+  padding-top: 15px;
 }
 
 .orange-text {
@@ -163,7 +163,31 @@ a {
 /* end landing */
 
 /* start projects */
-.projects {
+.project-filters {
+  ul {
+    list-style: none;
+    text-align: center;
+    font-size: 15px;
+
+    li {
+      display: inline-block;
+      margin: 0px 8px;
+      padding: 10px 12px;
+      cursor: pointer;
+      color: #6e6d7a;
+      font-weight: 300;
+    }
+
+    li.active {
+      border-radius: 8px;
+      background-color: rgba(13,12,34,0.05);
+      color: black;
+      font-weight: 500;
+    }
+  }
+}
+
+.project-cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -214,6 +238,10 @@ a {
 
     .image-and-overlay:hover .panel-overlay {
       opacity: 1;
+    }
+
+    .project-title {
+      font-size: 15px;
     }
   }
 

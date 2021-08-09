@@ -1,4 +1,4 @@
-<div class="project-panel">
+<div class="project-panel" category-id="{{ project.filters }}">
     <a href="{{ project.url }}">
         <div class="image-and-overlay">
             <img src="{{ project.image_path }}">
@@ -8,6 +8,8 @@
                 </div>
             </div>
         </div>
-        > {{ project.title }}
+        <div class="project-title">
+            > {{ project.title }}
+        </div>
     </a>
 </div>

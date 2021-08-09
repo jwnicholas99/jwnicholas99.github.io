@@ -20,10 +20,20 @@ skills:
 <section class="section-container">
     <div class="wrapper">
         <div class="projects">
-            {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
-            {% for project in sorted_projects %}
-                {% include project_panel.html project=project %}
-            {% endfor %}
+            <div class="project-filters">
+                <ul id="filter-btns">
+                    <li project-category="all" class="active">All</li>
+                    <li project-category="hacks">Hacks</li>
+                    <li project-category="research">Research</li>
+                    <li project-category="academics">Academics</li>
+                </ul>
+            </div>
+            <div class="project-cards">
+                {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+                {% for project in sorted_projects %}
+                    {% include project_panel.html project=project %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>
@@ -43,3 +53,4 @@ skills:
         </div>
     </div>
 </section>
+<script type="text/javascript" src="/scripts/project_filter.js"></script>

@@ -6,7 +6,7 @@ banner_path:
 panel_desc: Mood-tracking Web Application
 tagline: Raspberry Pi rover mounted with a pan-tilt camera that is capable of tracking objects using object detection and Proportional Integral Derivative processes
 card_color: "#CB356B"
-filters: software
+filters: hacks
 skills:
     - Python
     - TensorFlow
