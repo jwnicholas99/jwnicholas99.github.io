@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-desc: "Introduction to Jekyll"
-date:   2021-07-27 11:14:11 -0400
-length: "1 min"
+title:  "Random Things"
+desc: "Many random things in the world"
+date:   2021-08-01 11:14:11 -0400
+length: "3 min"
 categories: jekyll update
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.

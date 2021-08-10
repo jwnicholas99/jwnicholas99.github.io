@@ -14,7 +14,7 @@ body {
 
 a {
   color: #365069;
-  text-decoration: none;
+  transition: color 0.15s linear;
 }
 
 .wrapper {
@@ -22,6 +22,12 @@ a {
   margin: auto;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.small-header {
+  font-family: $header-font-family;
+  font-weight: $header-font-weight;
+  font-size: 22px;
 }
 
 .skill-bubble {
@@ -41,7 +47,32 @@ a {
 .skill-bubble:nth-of-type(6n+6) { background: $palette-purple }
 
 .section-container {
-  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.section-heading {
+  padding: 5vh 0vw;
+  margin-bottom: 2vh;
+  text-align: center;
+
+  span {
+    font-family: $header-font-family;
+    font-weight: $header-font-weight;
+    font-size: 28px;
+    padding: 1.7vh 1.7vw;
+    border: 2px solid black;
+    letter-spacing: 0.20rem;
+    -webkit-transition: color 0.2s linear, -webkit-box-shadow 0.2s linear;
+    transition: color 0.2s linear, -webkit-box-shadow 0.2s linear;
+    transition: box-shadow 0.2s linear, color 0.2s linear;
+    transition: box-shadow 0.2s linear, color 0.2s linear, -webkit-box-shadow 0.2s linear;
+  }
+}
+
+section:hover .section-heading span {
+  color: var(--section_color);
+  -webkit-box-shadow: 4px 4px var(--section_color);
+          box-shadow: 4px 4px var(--section_color);
 }
 
 .orange-text {
@@ -63,7 +94,8 @@ a {
   justify-content: center;
   padding-top: 50px;
   padding-bottom: 30px;
-  background: #F5F5F5;
+  background: #F9F8FD;
+  font-size: 17px;
 
   .wrapper {
     display: flex;
@@ -112,6 +144,7 @@ a {
   a {
     display: flex;
     align-items: center;
+    text-decoration: none;
   }
 
   img {
@@ -240,11 +273,88 @@ a {
       opacity: 1;
     }
 
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fd6a00;
+    }
+
     .project-title {
-      font-size: 15px;
+      font-size: 16px;
     }
   }
 
 }
-
 /* end projects */
+
+/* start about */
+.section-about {
+  background: #F9F8FD;
+  --section_color: #38bb00;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+
+  a:hover {
+    color: #38bb00;
+  }
+
+  .left-col {
+    width: 55%;
+    padding-right: 30px;
+
+    pre {
+      margin-top: 0px;
+
+      code {
+        margin-top: 0px;
+        border-radius: 4px;
+        font-size: 15px;
+      }
+    }
+
+    .about-text {
+      line-height: 24px;
+    }
+  }
+
+  .right-col {
+    margin-left: 30px;
+    margin-right: 30px;
+
+    .small-header {
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.post-panel {
+  padding-bottom: 15px;
+  line-height: 24px;
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .post-title {
+    font-family: $header-font-family;
+    font-weight: $header-font-weight;
+    font-size: 18px;
+  }
+
+  .post-details {
+    color: #768698;
+    font-size: 15px;
+  }
+}
+/* end about */
+
+/* start experience */
+.section-experience {
+  --section_color: #8c52ff;
+}
+/* end experience */

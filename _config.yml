@@ -36,6 +36,9 @@ collections:
   projects:
     output: true
     permalink: /project/:title/
+  post:
+    output: true
+    permalink: /post/:title/
   experience:
     output: false
 

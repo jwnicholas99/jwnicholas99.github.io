@@ -1,0 +1,13 @@
+<div class="post-panel"">
+    <a href="{{ post.url }}">
+        <div class="post-title">
+            {{ post.title }}
+        </div>
+    </a>
+    <div class="post-desc">
+        {{ post.desc }}
+    </div>
+    <div class="post-details">
+        {{ post.date | date: "%-d %B %Y" }} &middot <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.length }} read
+    </div>
+</div>

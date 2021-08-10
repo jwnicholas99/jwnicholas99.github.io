@@ -17,7 +17,7 @@ skills:
         </div>
     </div>
 </header>
-<section class="section-container">
+<section class="section-container section-projects">
     <div class="wrapper">
         <div class="projects">
             <div class="project-filters">
@@ -37,20 +37,57 @@ skills:
         </div>
     </div>
 </section>
-<section class="section-container">
+<section class="section-container section-about">
     <div class="wrapper">
+        <div class="section-heading">
+            <span>About</span>
+        </div>
         <div class="about">
-            I truly believe that a programmer is a craftsman. Programming is as much a technical skill as a creative art - not only can it solve 
-            problems, you can create anything you imagine. By exploring different areas from web development to robotics, I hope to learn the necessary 
-            tools to craft anything.
+            <div class="left-col">
+                <pre><code>jwnicholas99:/about$ whoami
+Jing Wei Nicholas Lim
+Computer Science @ Brown
+SWE Intern @ Roblox</code></pre>
+                <div class="about-text">
+                    <p>
+                        Hi, looks like you made it down here - I'm Nicholas and welcome to my corner of the internet! Check out some of my projects above and my relevant experience below. I also like to jot down my musings in my <a href="/blog">blog</a>. 
+                    </p>
+                    <p>
+                        My interests are mostly concentrated around the application of AI/ML. In pursuing this, I am currently engaging in reinforcement learning research at the Intelligent Robot Lab @ Brown and in robotics in the Humans To Robots Lab @ Brown.
+                    </p>
+                    <p>
+                        I truly believe that a programmer is a craftsman - programming is as much a technical skill as a creative art. By exploring different areas from web development to robotics, I hope to learn the necessary tools to craft anything I can imagine.
+                    </p>
+                    <p>
+                        More importantly, I want to use my programming knowledge to solve real-world problems 
+                    </p>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="small-header">Recent Musings</div>
+                {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+                {% for post in sorted_posts limit:4 %}
+                    {% include post_panel.html %}
+                {% endfor %}
+                <a href="/blog">See All Posts ></a>
+            </div>
+            
+            
         </div>
     </div>
 </section>
-<section class="section-container">
+<section class="section-container section-experience">
     <div class="wrapper">
+        <div class="section-heading">
+            <span>Experience</span>
+        </div>
         <div class="experience">
             Roblox, GovTech, InterSystems
         </div>
     </div>
 </section>
 <script type="text/javascript" src="/scripts/project_filter.js"></script>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/monokai.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
