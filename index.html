@@ -71,8 +71,6 @@ SWE Intern @ Roblox</code></pre>
                 {% endfor %}
                 <a href="/blog">See All Posts ></a>
             </div>
-            
-            
         </div>
     </div>
 </section>
@@ -82,7 +80,14 @@ SWE Intern @ Roblox</code></pre>
             <span>Experience</span>
         </div>
         <div class="experience">
-            Roblox, GovTech, InterSystems
+            <div class="timeline">
+                <ul>
+                    {% assign sorted_experiences = site.experiences | reverse %}
+                    {% for experience in sorted_experiences %}
+                        {% include experience_timeline_item.html experience=experience %}
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
 </section>

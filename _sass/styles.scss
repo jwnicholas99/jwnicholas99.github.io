@@ -357,4 +357,64 @@ section:hover .section-heading span {
 .section-experience {
   --section_color: #8c52ff;
 }
+
+.timeline {
+  ul {
+    list-style: none;
+
+    .experience-panel {
+      border: solid 0.1px #E5E5E5;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      padding: 30px;
+      transition: box-shadow 0.1s linear, -webkit-box-shadow 0.1s linear;
+      
+      .experience-header {
+        .experience-logo {
+          width: 70px;
+          height: 70px;
+          float: left;
+          margin-right: 15px;
+        }
+
+        .experience-heading-header {
+          font-family: $header-font-family;
+          font-weight: $header-font-weight;
+          font-size: 22px;
+          transition: color 0.1s linear;
+        }
+
+        .experience-heading-text {
+          color: #768698;
+          font-size: 15px;
+        }
+      }
+
+      .experience-content {
+        width: 100%;
+        line-height: 24px;
+      }
+    }
+
+    .experience-panel:hover {
+      border: solid 1px #E5E5E5;
+      -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+              box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+
+      .experience-heading-header {
+        color: var(--section_color);
+      }
+      
+    }
+  }
+}
+
+.prog_lang {
+  border: solid 0px;
+  border-radius: 3px;
+  padding: 4px;
+  background-color: var(--section_color);
+  color: white;
+  font-size: 15px;
+}
 /* end experience */
