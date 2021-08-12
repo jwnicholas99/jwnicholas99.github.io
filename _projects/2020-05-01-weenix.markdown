@@ -2,10 +2,8 @@
 layout: post
 title:  Weenix
 image_path: /images/projects/weenix/weenix_demo.png
-banner_path:
 panel_desc: Mini Unix Operating System
 tagline: A full-fledged mini Unix operating system with a file system and capable of making system calls
-card_color: "#CB356B"
 filters: academics
 skills:
     - C

@@ -1,0 +1,16 @@
+---
+layout: post
+title:  PiLED
+image_path: /images/projects/piLed/piLed_demo.gif
+panel_desc: GUI App to Easily Control RGB LED Strips
+tagline: PiLED
+filters: hacks
+skills:
+    - Python
+    - Raspberry Pi
+    - Tkinter
+---
+
+# Overview
+
+Using the Raspberry Pi4 (2GB), I built a two-wheeled rover mounted with a pan-tilt camera that can track objects. In order to work with the rpi's relatively weak CPU, I used Tensorflow Lite and Mobilenet-Single Shot Detection (SSD), a lightweight model with decent performance. To control the pan-tilt camera, I used twotuned Proportional Integral Derivative (PID) processes to control two servo motors.

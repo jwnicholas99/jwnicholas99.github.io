@@ -1,19 +1,14 @@
 ---
 layout: post
 title:  TronRL
-image_path: /images/projects/weenix/weenix_demo.png
-banner_path:
+image_path: /images/projects/tronRl/tronRl_demo.png
 panel_desc: AI for Playing Tron
-tagline: Raspberry Pi rover mounted with a pan-tilt camera that is capable of tracking objects using object detection and Proportional Integral Derivative processes
-card_color: "#CB356B"
+tagline: TronRL
 filters: academics
 skills:
     - Python
-    - TensorFlow
-    - Raspberry Pi
-    - OpenCV
 ---
 
 # Overview
 
-Using the Raspberry Pi4 (2GB), I built a two-wheeled rover mounted with a pan-tilt camera that can track objects. In order to work with the rpi's relatively weak CPU, I used Tensorflow Lite and Mobilenet-Single Shot Detection (SSD), a lightweight model with decent performance. To control the pan-tilt camera, I used twotuned Proportional Integral Derivative (PID) processes to control two servo motors.
+TronRL
