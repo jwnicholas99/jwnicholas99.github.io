@@ -17,13 +17,25 @@
                         </div>
                         <div class="landing-text">
                             <div class="landing-opening">
-                                Project: {{ page.title }}
+                                {% if page.is_project %}
+                                    Project:
+                                {% elsif page.is_post %}
+                                    Post:
+                                {% endif %}
+                                {{ page.title }}
                             </div>
                             {{ page.tagline }}
                         </div>
                     </div>
                 </div>
                 <div class="right-col">
+                    {% if page.links %}
+                        <div class="page-links">
+                            {% for link in page.links %}
+                                <a href="{{ link[1].link }}" target="_blank"><i class="{{ link[1].logo }}" aria-hidden="true"></i> {{ link[1].text }}</a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                     <div class="skills">
                         Built using:
                         <div>
@@ -35,7 +47,11 @@
                 </div>
             </div>
         </header>
-        {{ content }}
+        <div class="wrapper">
+            <div class="post-content">
+                {{ content }}
+            </div>
+        </div>
         {% include footer.html %}
     </body>
 </html>

@@ -13,12 +13,19 @@ body {
 }
 
 a {
-  color: #365069;
+  color: $default-font-color;
   transition: color 0.15s linear;
 }
 
 .wrapper {
   max-width: $wrapper-max-width;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.small-wrapper {
+  max-width: $small-wrapper-max-width;
   margin: auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -115,6 +122,27 @@ section:hover .section-heading span {
         padding-bottom: 20px;
         border-bottom: 1px solid lightgray;
         line-height: 26px;
+      }
+
+      .page-links {
+        padding-bottom: 20px;
+        border-bottom: 1px solid lightgray;
+        line-height: 26px;
+
+        a {
+          text-decoration: none;
+          font-size: 16px;
+          border-radius: 6px;
+          border: 1px solid #365069;
+          padding: 4px 8px;
+          transition: color 0.1s linear, background-color 0.1s linear;
+          margin-right: 3px;
+        }
+
+        a:hover {
+          color: white;
+          background-color: $default-font-color;
+        }
       }
 
       .skills {
@@ -431,3 +459,10 @@ section:hover .section-heading span {
   }
 }
 /* end footer */
+
+/* start post */
+.post-content {
+  line-height: 24px;
+}
+
+/* end post */
