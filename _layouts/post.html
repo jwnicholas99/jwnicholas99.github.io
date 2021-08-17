@@ -47,9 +47,12 @@
                 </div>
             </div>
         </header>
-        <div class="wrapper">
+        <div class="small-wrapper">
             <div class="post-content">
                 {{ content }}
+            </div>
+            <div class="rel-links">
+                {% include rel_links.html %}
             </div>
         </div>
         {% include footer.html %}

@@ -93,6 +93,16 @@ section:hover .section-heading span {
 .purple-text {
   color: $palette-purple;
 }
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: 0.2s opacity;
+}
 /* end reusables */
 
 /* landing */
@@ -102,7 +112,8 @@ section:hover .section-heading span {
   padding-top: 50px;
   padding-bottom: 30px;
   background: #F9F8FD;
-  font-size: 17px;
+  font-size: 18px;
+  line-height: 26px;
 
   .wrapper {
     display: flex;
@@ -192,6 +203,7 @@ section:hover .section-heading span {
   font-family: $header-font-family;
   font-weight: $header-font-weight;
   font-size: 28px;
+  line-height: 40px;
 }
 
 #typewriter {
@@ -345,7 +357,7 @@ section:hover .section-heading span {
     }
 
     .about-text {
-      line-height: 24px;
+      line-height: 26px;
     }
   }
 
@@ -361,7 +373,7 @@ section:hover .section-heading span {
 
 .post-panel {
   padding-bottom: 15px;
-  line-height: 24px;
+  line-height: 26px;
   
   a {
     text-decoration: none;
@@ -419,7 +431,7 @@ section:hover .section-heading span {
 
       .experience-content {
         width: 100%;
-        line-height: 24px;
+        line-height: 26px;
       }
     }
 
@@ -449,7 +461,7 @@ section:hover .section-heading span {
 /* start footer */
 .footer {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 120px;
   text-align: center;
 
   span {
@@ -462,7 +474,102 @@ section:hover .section-heading span {
 
 /* start post */
 .post-content {
-  line-height: 24px;
+  line-height: 26px;
+  padding-top: 24px;
+  
+  figure {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: auto;
+
+    figcaption {
+      text-align: center;
+      padding-top: 8px;
+      font-size: 15px;
+    }
+  }
+
+  a {
+    transition: background-color 0.1s linear;
+  }
+
+  a:hover {
+    color: white;
+    background-color: $default-font-color;
+  }
+
+  pre {
+    margin-top: 0px;
+    line-height: normal;
+
+    code {
+      margin-top: 0px;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+  }
+}
+
+img.responsive-image {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 500px;
+}
+
+img.responsive-image.small {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 250px;
+}
+
+.img-two-cols {
+  display: flex;
+  justify-content: center;
+
+  img.responsive-image.left, 
+  img.responsive-image.right{
+    width: 50%;
+    margin: 0;
+    max-width: 250px;
+  }
+}
+
+
+.rel-links {
+  margin-top: 60px;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+
+  a {
+    transition: background-color 0.1s linear;
+    font-weight: 500;
+  }
+
+  a:hover {
+    color: white;
+    background-color: $default-font-color;
+  }
+
+  .home-link {
+    display: block;
+    text-align: center;
+  }
+
+  .other-posts {
+    margin-top: 15px;
+
+    .left-link {
+      display: inline-block;
+    }
+
+    .right-link {
+      float: right;
+    }
+  }
 }
 
 /* end post */
