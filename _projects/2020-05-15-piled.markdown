@@ -3,14 +3,73 @@ layout: post
 title:  PiLED
 image_path: /images/projects/piLed/piLed_demo.gif
 panel_desc: GUI App to Easily Control RGB LED Strips
-tagline: PiLED
+tagline: GUI app that allows one to easily control the color and pattern of RGB LED strips with a Raspberry Pi
 filters: hacks
+links:
+    code: 
+        text: code
+        link: https://github.com/jwnicholas99/PiLED
+        logo: fa fa-github
 skills:
     - Python
     - Raspberry Pi
     - Tkinter
 ---
 
-# Overview
+## 1&nbsp;&nbsp;&nbsp;Overview
+PiLED has a graphical user interface (GUI) implemented in Tkinter for easy control of a WS2812/SK6812 RGB LED strip. Not only can you display a static set of colors, you can also chain together pre-defined LED patterns to create your own sequences.
 
-Using the Raspberry Pi4 (2GB), I built a two-wheeled rover mounted with a pan-tilt camera that can track objects. In order to work with the rpi's relatively weak CPU, I used Tensorflow Lite and Mobilenet-Single Shot Detection (SSD), a lightweight model with decent performance. To control the pan-tilt camera, I used twotuned Proportional Integral Derivative (PID) processes to control two servo motors.
+<figure class="lazyload">
+    <img class="responsive-image lazyload large" data-src="/images/projects/piLed/gui_demo.gif">
+    <figcaption>
+        Using PiLED to construct your own sequence
+    </figcaption>
+</figure>
+
+## 2&nbsp;&nbsp;&nbsp;Motivation
+I wanted to be able to easily customize my RGB LED strip, but with the projects available out there, creating sequences required a fair bit of coding. Furthermore, these projects also did not allow me to change the intensity of the RGB LED lights. To solve this, I built a GUI app for creating custom sequences and changing the intensity of the lights.
+
+<br>
+
+## 3&nbsp;&nbsp;&nbsp;Design
+### 3.1&nbsp;&nbsp;Hardware
+
+I only used the following hardware:
+* Raspberry Pi 4
+* WS2812 or SK6812 RGB LED strip
+* Three jumper wires
+
+I connected them according to the diagram below:
+
+<figure class="lazyload">
+    <img class="responsive-image lazyload" data-src="/images/projects/piLed/circuit.png">
+    <figcaption>
+        Schematic diagram of circuit
+    </figcaption>
+</figure>
+
+### 3.2&nbsp;&nbsp;Software
+#### 3.2.1&nbsp;Instant Feedback
+As seen in the gif above, the RGB LED strip immediately reflects the change when a color is added or removed. This instant feedback allows the user to visualize the pattern far more easily. You can also use the color picker to visually choose the color you want instead of fumbling for hex codes.
+
+#### 3.2.2&nbsp;Predefined LED Patterns
+There are 5 pre-defined LED patterns:
+1. Color Wipe
+2. Pulse
+3. Wave
+4. Rainbow Cycle
+5. Rainbow Chase
+
+Try them out!
+
+#### 3.2.3&nbsp;Construct Your Own
+Choosing from your own LED patterns or the pre-defined LED patterns, patterns are added to a queue to form a custom sequence. This allows for customizability without any coding.
+
+## 4&nbsp;&nbsp;&nbsp;Results
+
+<figure class="lazyload">
+    <img class="responsive-image lazyload large" data-src="/images/projects/piLed/piLed_demo.gif">
+    <figcaption>
+        Ooh colors!
+    </figcaption>
+</figure>
