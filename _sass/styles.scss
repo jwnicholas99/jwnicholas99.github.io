@@ -14,7 +14,7 @@ body {
 
 a {
   color: $default-font-color;
-  transition: color 0.15s linear;
+  transition: color 0.1s linear;
 }
 
 .wrapper {
@@ -138,16 +138,18 @@ section:hover .section-heading span {
       .page-links {
         padding-bottom: 20px;
         border-bottom: 1px solid lightgray;
-        line-height: 26px;
+        line-height: 18px;
 
         a {
+          display: inline-block;
           text-decoration: none;
           font-size: 16px;
           border-radius: 6px;
           border: 1px solid #365069;
           padding: 4px 8px;
           transition: color 0.1s linear, background-color 0.1s linear;
-          margin-right: 3px;
+          margin-right: 1px;
+          margin-bottom: 4px;
         }
 
         a:hover {
@@ -522,6 +524,13 @@ img.responsive-image.small {
   margin: 0 auto;
   display: block;
   max-width: 250px;
+}
+
+img.responsive-image.large {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 650px;
 }
 
 .img-two-cols {

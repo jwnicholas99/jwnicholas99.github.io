@@ -17,7 +17,6 @@ skills:
     - OpenCV
 ---
 ## 1&nbsp;&nbsp;&nbsp;Overview
-
 Using a Raspberry Pi4 (2GB), I built a two-wheeled rover capable of tracking objects with its pan-tilt camera. To accomodate the RPi's relatively weak CPU, I used Tensorflow Lite and Mobilenet-Single Shot Detection (SSD), a lightweight model with decent performance. To control the pan-tilt camera, I tuned two Proportional Integral Derivative (PID) controllers to control two servo motors (one for panning and another for tilting).
 
 <figure class="lazyload">
@@ -30,6 +29,7 @@ Using a Raspberry Pi4 (2GB), I built a two-wheeled rover capable of tracking obj
 ## 2&nbsp;&nbsp;&nbsp;Motivation
 During the (sweltering) summer of 2020, our pet Crystal developed a skin condition that forced her to be in a constant state of itchiness. As biting and scratching herself drew blood, we needed to constantly observe her and intervene when necessary. Frustrated with how often she sneaked off to bite herself, I built an object-tracking rover to follow her around.
 
+<br>
 ## 3&nbsp;&nbsp;&nbsp;Design
 
 ### 3.1&nbsp;&nbsp;Hardware
@@ -125,6 +125,7 @@ Note that as SSD can detect multiple objects in one frame, I restricted the trac
 
 Refer to [<code>/utils/tracking.py</code>](https://github.com/jwnicholas99/PiTracker/blob/master/utils/tracking.py) for the implementation details.
 
+<br>
 ## 4&nbsp;&nbsp;&nbsp;Results
 Here's a gif of the PiTracker tracking Crystal:
 
