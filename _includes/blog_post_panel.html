@@ -9,5 +9,9 @@
     </div>
     <div class="post-details">
         {{ post.date | date: "%-d %B %Y" }} &nbsp;&middot&nbsp; <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.length }} read
+        &nbsp;&middot&nbsp;
+        {% for item in post.categories %}
+            <span class="bubble {{ item }}">{{ item }}</span>
+        {% endfor %}
     </div>
 </div>

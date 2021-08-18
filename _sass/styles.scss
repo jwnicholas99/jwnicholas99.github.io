@@ -41,7 +41,7 @@ a {
   font-size: 22px;
 }
 
-.skill-bubble {
+.bubble {
   border: solid 0px;
   border-radius: 14px;
   padding: 3px 12px;
@@ -50,12 +50,12 @@ a {
   color: white
 }
 
-.skill-bubble:nth-of-type(6n+1) { background: $palette-orange }
-.skill-bubble:nth-of-type(6n+2) { background: $palette-yellow }
-.skill-bubble:nth-of-type(6n+3) { background: $palette-green }
-.skill-bubble:nth-of-type(6n+4) { background: $palette-blue }
-.skill-bubble:nth-of-type(6n+5) { background: $palette-indigo }
-.skill-bubble:nth-of-type(6n+6) { background: $palette-purple }
+.bubble:nth-of-type(6n+1) { background: $palette-orange }
+.bubble:nth-of-type(6n+2) { background: $palette-yellow }
+.bubble:nth-of-type(6n+3) { background: $palette-green }
+.bubble:nth-of-type(6n+4) { background: $palette-blue }
+.bubble:nth-of-type(6n+5) { background: $palette-indigo }
+.bubble:nth-of-type(6n+6) { background: $palette-purple }
 
 .section-container {
   padding-bottom: 20px;
@@ -163,6 +163,10 @@ section:hover .section-heading span {
       }
 
       .skills {
+        padding-top: 20px;
+      }
+
+      .categories {
         padding-top: 20px;
       }
     }
@@ -617,6 +621,18 @@ img.responsive-image.large {
     margin-top: 7px;
     color: #768698;
     font-size: 15px;
+
+    .bubble.personal {
+      background: $palette-orange;
+    }
+
+    .bubble.learning {
+      background: $palette-yellow;
+    }
+
+    .bubble.software-engineering {
+      background: $palette-green;
+    }
   }
 }
 /* end blog */
