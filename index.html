@@ -67,7 +67,7 @@ SWE Intern @ Roblox</code></pre>
                 <div class="small-header">Recent Musings</div>
                 {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
                 {% for post in sorted_posts limit:4 %}
-                    {% include post_panel.html %}
+                    {% include home_post_panel.html %}
                 {% endfor %}
                 <a href="/blog">See All Posts ></a>
             </div>

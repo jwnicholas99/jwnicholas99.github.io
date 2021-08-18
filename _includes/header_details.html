@@ -5,12 +5,14 @@
         <div><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/jingweinicholaslim/" target="_blank">Jing Wei Nicholas Lim</a></div>
         <div><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> <a href="/resume" target="_blank">Resume</a></div>
     </div>
-    <div class="skills">
-        Built using:
-        <div>
-            {% for item in page.skills %}
-                <span class="skill-bubble">{{ item }}</span>
-            {% endfor %}
+    {% if page.skills %}
+        <div class="skills">
+            Built using:
+            <div>
+                {% for item in page.skills %}
+                    <span class="skill-bubble">{{ item }}</span>
+                {% endfor %}
+            </div>
         </div>
-    </div>
+    {% endif %}
 </div>

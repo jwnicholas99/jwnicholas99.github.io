@@ -1,0 +1,30 @@
+---
+layout: default
+title: Blog
+---
+<header class="landing-container">
+    <div class="wrapper">
+    <div class="logo-container">
+      <a href="/">
+          <img src="/images/icon/logo/logo_transparent.png" alt="logo" width="43" height="47">
+          <div class="logo-text">n.lim</div>
+      </a>
+    </div>
+  </div>
+</header>
+<body class="blog">
+  <div class="wrapper">
+    <h1>Musings</h1>
+    <div class="blog-posts">
+      {% for post in site.posts %}
+        {% include blog_post_panel.html %}
+      {% endfor %}
+    </div>
+    <div class="rel-links">
+      <div class="home-link">
+        <a href="/">Home &hookleftarrow;</a>
+      </div>
+    </div>
+  </div>
+</body>
+  

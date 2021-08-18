@@ -1,5 +1,9 @@
 <div class="home-link">
-    <a href="/">Home &hookleftarrow;</a>
+    {% if page.is_project %}
+        <a href="/">Home &hookleftarrow;</a>
+    {% elsif page.is_post %}
+        <a href="/blog">Blog &hookleftarrow;</a>
+    {% endif %}
 </div>
 <div class="other-posts" >
     {% if page.next %}
