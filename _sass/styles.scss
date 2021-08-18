@@ -127,6 +127,12 @@ section:hover .section-heading span {
       width: 75%;
       padding-right: 30px;
       border-right: 1px solid lightgray;
+
+      .post-details {
+        margin-top: 7px;
+        color: #768698;
+        font-size: 16px;
+      }
     }
 
     .right-col {
@@ -206,7 +212,6 @@ section:hover .section-heading span {
     font-size: 26px;
   }
 }
-
 
 .landing-opening {
   padding-bottom: 6px;
@@ -621,18 +626,18 @@ img.responsive-image.large {
     margin-top: 7px;
     color: #768698;
     font-size: 15px;
-
-    .bubble.personal {
-      background: $palette-orange;
-    }
-
-    .bubble.learning {
-      background: $palette-yellow;
-    }
-
-    .bubble.software-engineering {
-      background: $palette-green;
-    }
   }
+}
+
+.bubble.personal {
+  background: $palette-orange;
+}
+
+.bubble.learning {
+  background: $palette-yellow;
+}
+
+.bubble.software {
+  background: $palette-green;
 }
 /* end blog */

@@ -24,7 +24,14 @@
                                 {% endif %}
                                 {{ page.title }}
                             </div>
-                            {{ page.tagline }}
+                            <div>
+                                {{ page.tagline }}
+                            </div>
+                            {% if page.is_post %}
+                                <div class="post-details">
+                                    {{ page.date | date: "%-d %B %Y" }} &nbsp;&middot&nbsp; <i class="fa fa-clock-o" aria-hidden="true"></i> {{ page.length }} read
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -50,7 +57,7 @@
                             Categories:
                             <div>
                                 {% for item in page.categories %}
-                                    <span class="bubble">{{ item }}</span>
+                                    <span class="bubble {{ item }}">{{ item }}</span>
                                 {% endfor %}
                             </div>
                         </div>
