@@ -102,7 +102,7 @@ In object detection, bounding boxes are drawn around detected objects and labell
 
 As the RPi has limited CPU resources, most state-of-the-art object detection models like Faster-RCNN and YOLO-v3 (even the Tiny version) are too demanding, resulting in an abysmal ~0.1-0.2 FPS. After experimenting with various object detection models, I found that using a quantized Mobilenet-Single Shot Detection (SSD) on TensorFlow Lite was able to detect objects with decent accuracy at a reasonable 3-4 FPS. 
 
-Refer to [<code>/utils/obj_detector.py</code>](https://github.com/jwnicholas99/PiTracker/blob/master/utils/obj_detector.py) for the implementation details.
+Refer to [`/utils/obj_detector.py`](https://github.com/jwnicholas99/PiTracker/blob/master/utils/obj_detector.py) for the implementation details.
 
 
 #### 3.2.2&nbsp;Moving the Pan-Tilt Camera
@@ -123,7 +123,7 @@ The inputs to the pan servo PID controller and tilt servo PID controller are the
 
 Note that as SSD can detect multiple objects in one frame, I restricted the tracker to only track the object with the highest confidence score of the chosen class (eg. human, dog, book, etc.).
 
-Refer to [<code>/utils/tracking.py</code>](https://github.com/jwnicholas99/PiTracker/blob/master/utils/tracking.py) for the implementation details.
+Refer to [`/utils/tracking.py`](https://github.com/jwnicholas99/PiTracker/blob/master/utils/tracking.py) for the implementation details.
 
 <br>
 ## 4&nbsp;&nbsp;&nbsp;Results

@@ -75,9 +75,9 @@ To faciliate the above feedback loop, we created a software stack outlined below
     </figcaption>
 </figure>
 
-On the ROS side (right), the robot publishes 4 ROS topics: color image (<code>sensor_msgs/CompressedImage</code>) and depth image (<code>sensor_msgs/CompressedImage</code>) from the Movo’s Kinect2, transform (<code>tf2_msgs/TFMessage</code>) and base scan (<code>sensor_msgs/LaserScan</code>) from the Movo’s LiDAR. 
+On the ROS side (right), the robot publishes 4 ROS topics: color image (`sensor_msgs/CompressedImage`) and depth image (`sensor_msgs/CompressedImage`) from the Movo’s Kinect2, transform (`tf2_msgs/TFMessage`) and base scan (`sensor_msgs/LaserScan`) from the Movo’s LiDAR. 
 
-RTAB-Map subscribes to these 4 topics and performs SLAM, publishing two ROS topics that constitute the map: grid map (<code>nav_msgs/OccupancyGrid</code>) and global map (<code>rtabmap_ros/mapData</code>).
+RTAB-Map subscribes to these 4 topics and performs SLAM, publishing two ROS topics that constitute the map: grid map (`nav_msgs/OccupancyGrid`) and global map (`rtabmap_ros/mapData`).
 
 We then use ROS-Sharp to communicate between the ROS side and the Unity side -  5 streams of data are sent over to the Unity side: transform, color image, depth image, grid map and global map. The Unity scene has 4 GameObjects that render these 5 data streams:
 1. TF Listener: Uses transform to position the virtual Movo within the scene
@@ -85,7 +85,7 @@ We then use ROS-Sharp to communicate between the ROS side and the Unity side -  
 3. RGB-D Renderer: Uses color image and depth image to generate and render a RGB-D point cloud that represents the current view from the Movo’s Kinect2
 4. Global Map Renderer: Renders map data as a global point cloud representing the map of the remote environment.
 
-As the Unity scene is continuously updated in near real-time, the user views the scene using an Oculus Quest VR system. The user then uses the Oculus Quest controllers to send controller inputs (sensor_msgs/Joy) that are sent over ROS-Sharp and published as movement inputs (geometry_msgs/Twist) to the Movo. The Movo moves according to these movement inputs. This completes the feedback loop.
+As the Unity scene is continuously updated in near real-time, the user views the scene using an Oculus Quest VR system. The user then uses the Oculus Quest controllers to send controller inputs (`sensor_msgs/Joy`) that are sent over ROS-Sharp and published as movement inputs (`geometry_msgs/Twist`) to the Movo. The Movo moves according to these movement inputs. This completes the feedback loop.
 
 ### 3.1&nbsp;&nbsp;Rendering in Unity
 Here, I will elaborate on how each of the 5 data streams is rendered and the problems encountered.
@@ -100,9 +100,9 @@ A robot has many different coordinate frames - the transform describes how they 
     </figcaption>
 </figure>
 
-To position the virtual Movo within the Unity scene, we parse the transform messages and arrange the Movo’s frames accordingly. However, we encounter bandwidth issues as there are a lot of frames within the Movo, hence creating a flood of <code>tf2_msgs/TFMessage</code> messages. 
+To position the virtual Movo within the Unity scene, we parse the transform messages and arrange the Movo’s frames accordingly. However, we encounter bandwidth issues as there are a lot of frames within the Movo, hence creating a flood of `tf2_msgs/TFMessage` messages. 
 
-**Optimization**: As we only need <code>/map->/odom</code> and <code>/odom->base_link messages</code>, we wrote a ROS node ([<code>tf_minimal.py</code>](https://github.com/jwnicholas99/ros_remote_explorer/blob/master/slam/src/tf_minimal.py)) to filter out other uneeded transform messages. To filter out all the other unneeded tf2_msgs/TFMessage messages, we wrote a ROS node (tf_minimal.py) to filter out messages from /tf and only publish /map->/odom and /odom->base_link messages on the /tf_minimal topic.
+**Optimization**: As we only need `/map->/odom` and `/odom->base_link messages`, we wrote a ROS node ([`tf_minimal.py`](https://github.com/jwnicholas99/ros_remote_explorer/blob/master/slam/src/tf_minimal.py)) to filter out other uneeded transform messages. To filter out all the other unneeded `tf2_msgs/TFMessage` messages, we wrote a ROS node (`tf_minimal.py`) to filter out messages from `/tf` and only publish `/map->/odom` and `/odom->base_link` messages on the `/tf_minimal` topic.
 
 #### 3.1.2&nbsp;Grid Map
 The grid map is a 2D map of the environment taken at the height of the Movo’s LiDAR sensor.
@@ -114,9 +114,9 @@ The grid map is a 2D map of the environment taken at the height of the Movo’s 
     </figcaption>
 </figure>
 
-We initially transferred <code>nav_msgs/OccupancyGrid</code> messages published by RTAB-Map and manually created a texture with the data stored in these messages. However, we encountered bandwidth issues when sending nav_msgs/OccupancyGrid messages across ROS-Sharp. This would cause the Unity scene to freeze for a moment every time a grid map is sent. 
+We initially transferred `nav_msgs/OccupancyGrid` messages published by RTAB-Map and manually created a texture with the data stored in these messages. However, we encountered bandwidth issues when sending nav_msgs/OccupancyGrid messages across ROS-Sharp. This would cause the Unity scene to freeze for a moment every time a grid map is sent. 
 
-**Optimization**: We created a ROS node ([<code>slam/grid_image_node.cpp</code>](https://github.com/jwnicholas99/ros_remote_explorer/blob/master/slam/src/grid_image_node.cpp)) that first converts the grid map into an image, then compresses it using OpenCV into a JPEG image. As the grid map grows larger, the ratio of compression grows from ~x2 to ~x15. Therefore, compression of the grid map image scales well with the size of the grid map.
+**Optimization**: We created a ROS node ([`slam/grid_image_node.cpp`](https://github.com/jwnicholas99/ros_remote_explorer/blob/master/slam/src/grid_image_node.cpp)) that first converts the grid map into an image, then compresses it using OpenCV into a JPEG image. As the grid map grows larger, the ratio of compression grows from ~x2 to ~x15. Therefore, compression of the grid map image scales well with the size of the grid map.
 
 #### 3.1.3&nbsp;RGBD Image
 A RGB-D image is produced by the Movo’s Kinect2 as a color (RGB) image and a depth (D) image, providing the current view from the Movo.
@@ -128,9 +128,9 @@ A RGB-D image is produced by the Movo’s Kinect2 as a color (RGB) image and a d
     </figcaption>
 </figure>
 
-We initially transferred <code>sensor_msgs/PointCloud2</code> messages that were generated by RTAB-Map as they are easier to render, but again faced bandwidth issues. 
+We initially transferred `sensor_msgs/PointCloud2` messages that were generated by RTAB-Map as they are easier to render, but again faced bandwidth issues. 
 
-**Optimization**: We send compressed color and depth images, then manually integrate them to generate a point cloud on the Unity side ([<code>RGBDRenderer.cs</code>](https://github.com/jwnicholas99/vrRemoteExplorer/blob/master/Assets/Scripts/RGBD/RGBDRenderer.cs)). This overcomes the bandwidth issue as the images have been compressed.
+**Optimization**: We send compressed color and depth images, then manually integrate them to generate a point cloud on the Unity side ([`RGBDRenderer.cs`](https://github.com/jwnicholas99/vrRemoteExplorer/blob/master/Assets/Scripts/RGBD/RGBDRenderer.cs)). This overcomes the bandwidth issue as the images have been compressed.
 
 <figure class="lazyload">
     <img class="responsive-image lazyload large" data-src="/images/projects/remoteExplorer/depth_and_color_images.png">
@@ -161,14 +161,14 @@ The global map is a map of all the areas of the remote environment that RTAB-Map
     </figcaption>
 </figure>
 
-We initially transferred <code>sensor_msgs/PointCloud2</code> messages published by RTAB-Map as they are far easier to render, but encountered bandwidth issues again. This is because the <code>sensor_msgs/PointCloud2</code> messages contains the whole map instead of just newly added points, hence transferring a lot of redundant data. Furthermore, these messages do not contain any information about direction of each point, so we are unable to draw a quad for each point, resulting in a rather sparse rendering of the environment.
+We initially transferred `sensor_msgs/PointCloud2` messages published by RTAB-Map as they are far easier to render, but encountered bandwidth issues again. This is because the `sensor_msgs/PointCloud2` messages contains the whole map instead of just newly added points, hence transferring a lot of redundant data. Furthermore, these messages do not contain any information about direction of each point, so we are unable to draw a quad for each point, resulting in a rather sparse rendering of the environment.
 
-**Optimization**: We transferred <code>rtabmap_ros/mapData</code> messages published by RTAB-Map that is a representation of RTAB-Map’s internal graph. As each <code>rtabmap_ros/mapData</code> message contains only the latest graph node’s RGB-D image, no redundant data is sent. Additionally, each node has a position and orientation, allowing us to generate a point cloud for each node from its RGB-D image with quads. This results in a denser rendering of the environment:
+**Optimization**: We transferred `rtabmap_ros/mapData` messages published by RTAB-Map that is a representation of RTAB-Map’s internal graph. As each `rtabmap_ros/mapData` message contains only the latest graph node’s RGB-D image, no redundant data is sent. Additionally, each node has a position and orientation, allowing us to generate a point cloud for each node from its RGB-D image with quads. This results in a denser rendering of the environment:
 
 <figure class="lazyload">
     <img class="responsive-image lazyload" data-src="/images/projects/remoteExplorer/remoteExplorer_demo.png">
     <figcaption>
-        Denser rendering using <code>rtabmap_ros/mapData</code>
+        Denser rendering using `rtabmap_ros/mapData`
     </figcaption>
 </figure>
 
