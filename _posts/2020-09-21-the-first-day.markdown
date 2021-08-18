@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The First Day"
-desc: "There's a first for everything"
+tagline: "There's a first for everything"
 date:   2020-09-21 11:14:11 -0400
 length: "5 min"
 categories: jekyll update

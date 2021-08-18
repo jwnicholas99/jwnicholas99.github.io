@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
-desc: "Introduction to Jekyll"
+tagline: "Introduction to Jekyll"
 date:   2021-07-27 11:14:11 -0400
 length: "1 min"
 categories: jekyll update

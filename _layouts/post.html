@@ -36,14 +36,25 @@
                             {% endfor %}
                         </div>
                     {% endif %}
-                    <div class="skills">
-                        Built using:
-                        <div>
-                            {% for item in page.skills %}
-                                <span class="skill-bubble">{{ item }}</span>
-                            {% endfor %}
+                    {% if page.is_project %}
+                        <div class="skills">
+                            Built using:
+                            <div>
+                                {% for item in page.skills %}
+                                    <span class="skill-bubble">{{ item }}</span>
+                                {% endfor %}
+                            </div>
                         </div>
-                    </div>
+                    {% elsif page.is_post %}
+                        <div class="categories">
+                            Categories:
+                            <div>
+                                {% for item in page.categories %}
+                                    <span class="skill-bubble">{{ item }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </header>

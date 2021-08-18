@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Random Things"
-desc: "Many random things in the world"
+tagline: "Many random things in the world"
 date:   2021-08-01 11:14:11 -0400
 length: "3 min"
 categories: jekyll update
