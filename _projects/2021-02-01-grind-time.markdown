@@ -51,8 +51,6 @@ We conceive applying to jobs as "sessions" - you sit down and grind through a bu
 ### 3.2&nbsp;&nbsp;&nbsp;Saving Applications
 Application URLs are saved as a list. Using Chrome's special purpose APIs like <code>chrome.storage</code>, application URLs are stored in your browser's local storage and will persist across sessions. 
 
-<br>
-
 ### 3.3&nbsp;&nbsp;&nbsp;Autofill
 Most applications have the same few fields: First Name, Last Name, Email, etc. We allow users to autofill these fields with a click of a button:
 
@@ -70,4 +68,4 @@ Additional features we can implement:
 * Incentivising users for completing applications
 
 <br>
-_Thanks to [Alex](https://github.com/alexanderivanov2424) and [Jason](https://github.com/jason-crowley) for working on this with me!_
+_Thanks [Alex](https://github.com/alexanderivanov2424) and [Jason](https://github.com/jason-crowley) for working on this with me!_

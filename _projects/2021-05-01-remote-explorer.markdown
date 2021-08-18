@@ -211,7 +211,7 @@ Another thing we can improve is the rendering of the global map. As seen below, 
     </figcaption>
 </figure>
 
-## 4&nbsp;&nbsp;&nbsp;Future Work
+## 5&nbsp;&nbsp;&nbsp;Future Work
 
 There are a few paths for future work:
 1. Improve transmission of data

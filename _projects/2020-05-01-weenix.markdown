@@ -9,6 +9,55 @@ skills:
     - C
 ---
 
-# Overview
+## 1&nbsp;&nbsp;&nbsp;Overview
+As part of [CSCI1690: Operating Systems Lab](https://github.com/brown-cs1690/handout/wiki), I developed a full-fledged mini Unix OS knows as Weenix. This self-driven, semester-long project was completed in tandem with CSCI1670: Operating Systems.
 
-In Spring 2019, I developed the majority of a operating system kernel known as "Weenix" as part of the <a href="https://cs.brown.edu/courses/csci1670/">CSCI1670: Operating Systems</a> course (and its optional half-credit lab <a href="http://cs.brown.edu/courses/cs167/content/weenix-doc.pdf">CSCI1690: Operating Systems Laboratory</a>) at Brown University.
+<figure class="lazyload">
+    <img class="responsive-image lazyload large" data-src="/images/projects/weenix/weenix_demo.png">
+    <figcaption>
+        Weenix's command line
+    </figcaption>
+</figure>
+
+## 2&nbsp;&nbsp;&nbsp;Features
+The project was divided into 5 arcs:
+1. Procs: Processes, threads and mutexes
+2. Drivers: Device drivers for terminals, disks and memory devices
+3. Virtual File System: Common interface between operating system kernel and various file systems
+4. System V File System: File System implementation based on the original Unix file system
+5. Virtual Memory: Implement virtual memory maps, page fault handler, anonymous and shadow objects, and systems calls such as fork(). With these, the Weenix kernel is able to manage user address spaces, run user-level code and service system calls
+
+<figure class="lazyload">
+    <img class="responsive-image lazyload large" data-src="/images/projects/weenix/startup.png">
+    <figcaption>
+        Startup
+    </figcaption>
+</figure>
+
+<figure class="lazyload">
+    <img class="responsive-image lazyload large" data-src="/images/projects/weenix/syscall_ls.png">
+    <figcaption>
+        Simple <code>ls</code> system call
+    </figcaption>
+</figure>
+
+<figure class="lazyload">
+    <img class="responsive-image lazyload large" data-src="/images/projects/weenix/user_level.png">
+    <figcaption>
+        Running user-level code
+    </figcaption>
+</figure>
+
+<figure class="lazyload">
+    <img class="responsive-image lazyload large" data-src="/images/projects/weenix/forkbomb.png">
+    <figcaption>
+        The never-ending forkbomb
+    </figcaption>
+</figure>
+
+<figure class="lazyload">
+    <img class="responsive-image lazyload large" data-src="/images/projects/weenix/shutdown.png">
+    <figcaption>
+        That's a wrap!
+    </figcaption>
+</figure>
