@@ -1,7 +1,11 @@
 // Filter for the projects section
 var $projects = $('.project-cards').isotope({
     itemSelector: '.project-panel',
-    layoutMode: 'fitRows'
+    layoutMode: 'fitRows',
+    percentPosition: true,
+    fitRows: {
+        gutter: '.project-gutter-sizer'
+    }
 });
 
 $('#filter-btns').on('click', '.filter-btn', function() {

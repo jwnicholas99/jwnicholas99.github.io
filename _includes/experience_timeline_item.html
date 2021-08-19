@@ -1,9 +1,12 @@
-<li class="experience-panel">
+<div class="experience-panel">
     <div class="experience-header">
-        <img src={{ experience.image_path }} class="experience-logo"> 
-        <div class="experience-heading-header">{{ experience.company }}</div> 
-        <span class="experience-heading-text"> &lt; {{ experience.position }} &gt;</span><br>
-        <span class="experience-heading-text"> #  {{ experience.date_str }} &middot {{ experience.location }}</span>
+        <img src={{ experience.image_path }} class="experience-logo">
+        <div class="experience-details">
+            <div class="experience-heading-header">{{ experience.company }}</div> 
+            <span class="experience-heading-text"> &lt; {{ experience.position }} &gt;</span><br>
+            <span class="experience-heading-text"> #  {{ experience.date_str }} &middot {{ experience.location }}</span>
+        </div> 
+        
     </div>
     <div class="experience-content">
         {{ experience.content }}
@@ -13,4 +16,4 @@
             <span class="prog_lang">{{ skill }}</span>
         {% endfor %}
     </div>
-</li>
+</div>

@@ -32,6 +32,7 @@ skills:
                 {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
                 {% for project in sorted_projects %}
                     {% include project_panel.html project=project %}
+                    <div class="project-gutter-sizer"></div>
                 {% endfor %}
             </div>
         </div>
@@ -81,12 +82,10 @@ SWE Intern @ Roblox</code></pre>
         </div>
         <div class="experience">
             <div class="timeline">
-                <ul>
-                    {% assign sorted_experiences = site.experiences | reverse %}
-                    {% for experience in sorted_experiences %}
-                        {% include experience_timeline_item.html experience=experience %}
-                    {% endfor %}
-                </ul>
+                {% assign sorted_experiences = site.experiences | reverse %}
+                {% for experience in sorted_experiences %}
+                    {% include experience_timeline_item.html experience=experience %}
+                {% endfor %}
             </div>
         </div>
     </div>
