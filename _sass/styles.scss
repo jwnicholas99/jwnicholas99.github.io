@@ -321,10 +321,10 @@ section:hover .section-heading span {
 
 .logo-container {
   padding-bottom: 20px;
+  display: flex;
+  align-items: center;
 
   a {
-    display: flex;
-    align-items: center;
     text-decoration: none;
   }
 
