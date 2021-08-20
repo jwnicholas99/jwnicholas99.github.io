@@ -32,6 +32,17 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+seo:
+  name: Jing Wei Nicholas Lim
+  type: Person
+url: https://jwnicholas99.github.io/
+social:
+  name: Jing Wei Nicholas Lim
+  links:
+    - https://github.com/jwnicholas99
+    - https://www.linkedin.com/in/jingweinicholaslim/
+
+
 collections:
   projects:
     output: true
