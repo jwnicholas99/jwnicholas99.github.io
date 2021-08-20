@@ -8,6 +8,13 @@ skills:
     - JavaScript
 ---
 <header class="landing-container">
+    <label class="toggle">
+        <i class="fa fa-adjust"></i>
+        <div>
+          <input class="toggle-switch" type="checkbox" onClick="modeSwitcher()" />
+          <span class="slider round"></span>
+        </div>
+    </label>
     <div class="wrapper">
         <div class="left-col">
             {% include landing.html %}
