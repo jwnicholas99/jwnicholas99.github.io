@@ -2,7 +2,7 @@
     <div class="experience-header">
         <img src={{ experience.image_path }} class="experience-logo">
         <div class="experience-details">
-            <div class="experience-heading-header">{{ experience.company }}</div> 
+            <div class="experience-heading-header"><a href="{{ experience.company_url }}" target="_blank">{{ experience.company }}</a></div>
             <span class="experience-heading-text"> &lt; {{ experience.position }} &gt;</span><br>
             <span class="experience-heading-text"> #  {{ experience.date_str }} &middot {{ experience.location }}</span>
         </div> 

@@ -594,7 +594,11 @@ section:hover .section-heading span {
           font-family: $header-font-family;
           font-weight: $header-font-weight;
           font-size: 22px;
-          transition: color 0.1s linear;
+
+          a {
+            text-decoration: none;
+            transition: color 0.1s linear;
+          }
         }
   
         .experience-heading-text {
@@ -619,7 +623,7 @@ section:hover .section-heading span {
     -webkit-box-shadow: 0 5px 10px 0 var(--panel-shadow);
             box-shadow: 0 5px 10px 0 var(--panel-shadow);
 
-    .experience-heading-header {
+    .experience-heading-header a {
       color: var(--section_color);
     }
     
@@ -705,8 +709,9 @@ section:hover .section-heading span {
     }
   }
 
-  @media (max-width: 500px){
+  @media (max-width: 600px){
     line-height: 24px;
+    font-size: 15px;
 
     figure {  
       figcaption {
@@ -714,6 +719,22 @@ section:hover .section-heading span {
       }
     }
   }
+}
+
+iframe.responsive-image {
+  width: 100%;
+  height: 360px;
+  margin: 0 auto;
+  display: block;
+  max-width: 500px;
+}
+
+iframe.responsive-image.large {
+  width: 100%;
+  height: 400px;
+  margin: 0 auto;
+  display: block;
+  max-width: 650px;
 }
 
 img.responsive-image {

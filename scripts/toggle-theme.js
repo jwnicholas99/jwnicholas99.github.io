@@ -1,5 +1,5 @@
 var lightCodeTheme = "//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/monokai.min.css"
-var darkCodeTheme = "//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/base16/material.min.css"
+var darkCodeTheme = "//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/base16/rebecca.min.css"
 
 function setLightMode(){
     document.documentElement.setAttribute('data-theme', 'light');

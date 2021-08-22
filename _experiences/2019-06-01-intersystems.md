@@ -1,5 +1,6 @@
 ---
 company: InterSystems
+company_url: https://www.intersystems.com/
 position: Software Engineering Intern
 date_str: May 2019 - Aug 2019
 location: Cambridge, MA
