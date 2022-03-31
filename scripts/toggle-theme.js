@@ -26,10 +26,14 @@ let systemInitiatedDark = window.matchMedia("(prefers-color-scheme: dark)");
 // the system preferences 
 let theme = sessionStorage.getItem('theme');
 
-if (systemInitiatedDark.matches || theme === "dark") {
-	setDarkMode();
+if (theme === 'light') {
+    setLightMode();
+} else if (theme === 'dark') {
+    setDarkMode();
+} else if (systemInitiatedDark.matches) {
+    setDarkMode();
 } else {
-	setLightMode();
+    setLightMode();
 }
 
 function prefersColorTest(systemInitiatedDark) {
