@@ -79,6 +79,7 @@ a {
   line-height: 30px;
   font-size: 15px;
   color: white;
+  white-space: nowrap;
 }
 
 .bubble:nth-of-type(6n+1) { background: $palette-orange }
