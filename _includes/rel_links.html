@@ -7,9 +7,9 @@
 </div>
 <div class="other-posts" >
     {% if page.next %}
-        <a href="{{ page.next.url }}" class="left-link"><--  {{ page.next.title }}</a>
+        <a href="{{ page.next.url }}" class="left-link"><--  {{ page.next.title | truncate: 17 }}</a>
     {% endif %}
     {% if page.previous %}
-        <a href="{{ page.previous.url }}" class="right-link">{{ page.previous.title }}  --></a>
+        <a href="{{ page.previous.url }}" class="right-link">{{ page.previous.title | truncate: 17 }}  --></a>
     {% endif %}
 </div>

@@ -231,6 +231,15 @@ section:hover .section-heading span {
         padding-bottom: 20px;
         border-bottom: 1px solid lightgray;
         line-height: 26px;
+
+        a {
+          text-decoration: none;
+        }
+
+        a:hover {
+          color: var(--background-color);
+          background-color: var(--font-color);
+        }
       }
 
       .page-links {
@@ -664,6 +673,10 @@ section:hover .section-heading span {
         display: block;
         padding-bottom: 7px;
       }
+
+    a {
+      text-decoration-line: none;
+    }
     }
   }
 
