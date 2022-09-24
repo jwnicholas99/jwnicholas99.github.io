@@ -3,7 +3,7 @@ layout: post
 title: Micro-Controlling Traffic Lights
 tagline: Exploring embedded systems
 date:   2022-08-19 12:13:00 -0400
-length: 10 min
+length: 15 min
 categories: 
     - computer science
     - embedded systems
