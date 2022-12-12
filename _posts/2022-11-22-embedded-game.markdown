@@ -38,7 +38,7 @@ If we look even further back, the first video game console, dubbed " The Brown B
 Ever since I've started gaming in my pre-teens, I've always wondered how video game consoles were constructed, how they accepted various inputs and produced various outputs (sound, video). Fortunately, in the [second part of the EdX course](https://www.edx.org/course/embedded-systems-shape-the-world-multi-threaded-in) created by UT Austin professors Jonathan Valvano and Ramesh Yerraballi, we get to build our own video game console! Through this project, we can showcase various important microcontroller concepts: interrupts, DACs, ADCs and graphics. We will be creating a video game console for Atari's Space Invaders!
 
 <figure class="lazyload">
-    <img class="responsive-image lazyload small" data-src="/images/posts/gaming_microcontroller/space_invaders.png">
+    <img class="responsive-image lazyload small" data-src="/images/posts/gaming_microcontroller/space_invaders_game.png">
     <figcaption>
         Our basic Space Invaders
     </figcaption>
@@ -200,7 +200,7 @@ As the 11k$$\Omega$$ and 44k$$\Omega$$ resistors are in parallel, the effective 
     </figcaption>
 </figure>
 
-As such, using the binary weighted circuit, our DAC is now able to output voltages that are between 0.0V and 3.3V. Of course, as we increase the number of bits of our DAC, the greater the precision of our DAC. For example, a 5-bit DAC will have $$2^5=32 levels$$ and a resolution of $$3.3V/31$$. However, one flaw of the binary weighted DAC is that the value of resistors grow exponentially. For a 5-bit DAC where the smallest resistor is 11k$$\Omega$$, the largest resistor will be a whopping 176k$$\Omega$$. This can be mitigated by using the other kind of DACs, [R-2R ladders](https://youtu.be/bXUfDLF4MVc) (which we won't use for the sake of simplicity).
+As such, using the binary weighted circuit, our DAC is now able to output voltages that are between 0.0V and 3.3V. Of course, as we increase the number of bits of our DAC, the greater the precision of our DAC. For example, a 5-bit DAC will have $$2^5=32$$ levels and a resolution of $$3.3V/31$$. However, one flaw of the binary weighted DAC is that the value of resistors grow exponentially. For a 5-bit DAC where the smallest resistor is 11k$$\Omega$$, the largest resistor will be a whopping 176k$$\Omega$$. This can be mitigated by using the other kind of DACs, [R-2R ladders](https://youtu.be/bXUfDLF4MVc) (which we won't use for the sake of simplicity).
 
 #### 1.2.2&nbsp;&nbsp;Using the DAC
 Just like the ADC, how are we going to use the DAC in our video game console? We will be using it to produce sound! First, what is sound? Sound is a pressure wave propagating through a medium like air or water. Let's analyse sound waves as a sinusoidal wave:
