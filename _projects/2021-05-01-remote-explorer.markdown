@@ -168,7 +168,7 @@ We initially transferred `sensor_msgs/PointCloud2` messages published by RTAB-Ma
 <figure class="lazyload">
     <img class="responsive-image lazyload" data-src="/images/projects/remoteExplorer/remoteExplorer_demo.png">
     <figcaption>
-        Denser rendering using `rtabmap_ros/mapData`
+        Denser rendering using rtabmap_ros/mapData
     </figcaption>
 </figure>
 
