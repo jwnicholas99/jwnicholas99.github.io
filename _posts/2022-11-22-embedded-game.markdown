@@ -163,7 +163,7 @@ How are we going to use the ADC in our video game console? We use it to read ana
 </figure>
 
 ### 1.2&nbsp;&nbsp;Digital-to-Analog Converter
-With the digital-to-analog converter (DAC), we face a similar problem of reconciling an analog world with a digital computer, except that now we want to convert a digital number to an analog output. Given that our GPIO pins can only be set to a low of 0.0V (digital 0) or a high of 3.3V (digital 1), how can we output a voltage that is between 0.0V and 3.3V? There are two ways to build a DAC circuit: binary weighted or R-2R ladder. Here, we will only take a look at the binary weighted circuit.
+With the digital-to-analog converter (DAC), we face a similar problem of reconciling an analog world with a digital computer, except that now we want to convert a digital number to an analog output. Given that our general purpose input/output (GPIO) pins can only be set to a low of 0.0V (digital 0) or a high of 3.3V (digital 1), how can we output a voltage that is between 0.0V and 3.3V? There are two ways to build a DAC circuit: binary weighted or R-2R ladder. Here, we will only take a look at the binary weighted circuit.
 
 #### 1.2.1&nbsp;&nbsp;Binary Weighted DAC
 <figure class="lazyload">
