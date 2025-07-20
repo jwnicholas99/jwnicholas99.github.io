@@ -2,100 +2,108 @@
 layout: default
 title: "Home"
 skills:
-    - Jekyll
-    - Ruby
-    - HTML/CSS
-    - JavaScript
+  - Jekyll
+  - Ruby
+  - HTML/CSS
+  - JavaScript
 ---
+
 <header class="landing-container">
-    <label class="toggle">
-        <i class="fa fa-adjust"></i>
-        <div>
-          <input class="toggle-switch" type="checkbox" onClick="modeSwitcher()" />
-          <span class="slider round"></span>
-        </div>
-    </label>
-    <div class="wrapper">
-        <div class="left-col">
-            {% include landing.html %}
-        </div>
-        <div class="right-col">
-            {% include header_details.html %}
-        </div>
+  <label class="toggle">
+    <i class="fa fa-adjust"></i>
+    <div>
+      <input class="toggle-switch" type="checkbox" onClick="modeSwitcher()" />
+      <span class="slider round"></span>
     </div>
+  </label>
+  <div class="wrapper">
+    <div class="left-col">{% include landing.html %}</div>
+    <div class="right-col">{% include header_details.html %}</div>
+  </div>
 </header>
 <section class="section-container section-projects">
-    <div class="wrapper">
-        <div class="projects">
-            <div class="project-filters">
-                <ul id="filter-btns">
-                    <li project-category="*" class="filter-btn active">All</li>
-                    <li project-category=".hacks" class="filter-btn">Hacks</li>
-                    <li project-category=".research" class="filter-btn">Research</li>
-                    <li project-category=".academics" class="filter-btn">Academics</li>
-                </ul>
-            </div>
-            <div class="project-cards">
-                {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
-                {% for project in sorted_projects %}
-                    {% include project_panel.html project=project %}
-                    <div class="project-gutter-sizer"></div>
-                {% endfor %}
-            </div>
-        </div>
+  <div class="wrapper">
+    <div class="projects">
+      <div class="project-filters">
+        <ul id="filter-btns">
+          <li project-category="*" class="filter-btn active">All</li>
+          <li project-category=".hacks" class="filter-btn">Hacks</li>
+          <li project-category=".research" class="filter-btn">Research</li>
+          <li project-category=".academics" class="filter-btn">Academics</li>
+        </ul>
+      </div>
+      <div class="project-cards">
+        {% assign sorted_projects = site.projects | sort: 'date' | reverse %} {%
+        for project in sorted_projects %} {% include project_panel.html
+        project=project %}
+        <div class="project-gutter-sizer"></div>
+        {% endfor %}
+      </div>
     </div>
+  </div>
 </section>
 <section class="section-container section-about">
-    <div class="wrapper">
-        <div class="section-heading">
-            <span>About</span>
-        </div>
-        <div class="about">
-            <div class="left-col">
-                <pre><code>jwnicholas99:/about$ whoami
-Jing Wei Nicholas Lim
-Computer Science @ Brown
-SWE Intern @ Roblox</code></pre>
-                <div class="about-text">
-                    <p>
-                        Hi, looks like you made it down here - I'm Nicholas and welcome to my corner of the internet! Check out some of my projects above and my relevant experiences below. To the right are some of the things I write on in my blog. 
-                    </p>
-                    <p>
-                        I'm a maker - I like building and working with robots as they have a tangible effect on the real world + I also like working with my hands!  
-                    </p>
-                    <p>
-                        My interests are mostly concentrated around the application of AI/ML. In pursuing this, I'm currently conducting research in reinforcement learning at the Intelligent Robot Lab @ Brown and in robotics at the Humans To Robots Lab @ Brown.
-                    </p>
-                    <p>
-                        I want to use my programming knowledge to solve real-world problems - shoot me at email at <a href = "mailto: jwnicholas.lim@gmail.com">jwnicholas.lim@gmail.com</a> if there is something you want to collaborate on! 
-                    </p>
-                </div>
-            </div>
-            <div class="right-col">
-                <div class="small-header">Recent Musings</div>
-                {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
-                {% for post in sorted_posts limit:4 %}
-                    {% include home_post_panel.html %}
-                {% endfor %}
-                <a href="/blog">See All Posts ></a>
-            </div>
-        </div>
+  <div class="wrapper">
+    <div class="section-heading">
+      <span>About</span>
     </div>
+    <div class="about">
+      <div class="left-col">
+        <pre><code>jwnicholas99:/about$ whoami
+Jing Wei Nicholas Lim
+Software Engineer @ Open Government Products
+Computer Science & Philosophy @ Brown</code></pre>
+        <div class="about-text">
+          <p>
+            Hi, looks like you made it down here - I'm Nicholas and welcome to
+            my corner of the internet! Check out some of my projects above and
+            my relevant experiences below. To the right are some of the things I
+            write on in my blog.
+          </p>
+          <p>
+            I'm a maker - I like building and working with robots as they have a
+            tangible effect on the real world + I also like working with my
+            hands!
+          </p>
+          <p>
+            My interests are mostly concentrated around the application of
+            AI/ML. In pursuing this, I'm conducted research in reinforcement
+            learning at the Intelligent Robot Lab @ Brown and in robotics at the
+            Humans To Robots Lab @ Brown.
+          </p>
+          <p>
+            I want to use my programming knowledge to solve real-world problems
+            - shoot me at email at
+            <a href="mailto: jwnicholas.lim@gmail.com"
+              >jwnicholas.lim@gmail.com</a
+            >
+            if there is something you want to collaborate on!
+          </p>
+        </div>
+      </div>
+      <div class="right-col">
+        <div class="small-header">Recent Musings</div>
+        {% assign sorted_posts = site.posts | sort: 'date' | reverse %} {% for
+        post in sorted_posts limit:4 %} {% include home_post_panel.html %} {%
+        endfor %}
+        <a href="/blog">See All Posts ></a>
+      </div>
+    </div>
+  </div>
 </section>
 <section class="section-container section-experience">
-    <div class="wrapper">
-        <div class="section-heading">
-            <span>Experience</span>
-        </div>
-        <div class="experience">
-            <div class="timeline">
-                {% assign sorted_experiences = site.experiences | reverse %}
-                {% for experience in sorted_experiences %}
-                    {% include experience_timeline_item.html experience=experience %}
-                {% endfor %}
-            </div>
-        </div>
+  <div class="wrapper">
+    <div class="section-heading">
+      <span>Experience</span>
     </div>
+    <div class="experience">
+      <div class="timeline">
+        {% assign sorted_experiences = site.experiences | reverse %} {% for
+        experience in sorted_experiences %} {% include
+        experience_timeline_item.html experience=experience %} {% endfor %}
+      </div>
+    </div>
+  </div>
 </section>
 
 <script type="text/javascript" src="/scripts/project_filter.js"></script>
